@@ -1,0 +1,109 @@
+﻿@*This is the services page*@
+@model MobileServices.Models.Packages
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Services</title>
+</head>
+<body>
+    <div>
+        <br />
+        @*Place holder for the errors*@
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationMessage("atleastOne", new { @class = "text-danger" })
+        @Html.ValidationMessage("notTwo", new { @class = "text-danger" })
+        @Html.ValidationMessage("notAll", new { @class = "text-danger" })
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Welcome to our Mobile Phone Plans</h1>
+                <p class="lead">Please select one of the following plans by selecting the click box under the plan:.</p>
+            </div>
+        </div>
+        @using (Html.BeginForm("Index", "Services", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Option A
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Benefits</h5>
+                            <p class="card-text">
+                                300 free minutes talk time
+                            </p>
+                            <p class="card-text">
+                                500 MB data
+                            </p>
+                            <p class="card-text">
+                                R 50
+                            </p>
+                            <div class="form-check">
+                                @Html.CheckBoxFor(m => m.packageA, new { @class = "form-check-input" })
+                                @Html.LabelFor(m => m.packageA, new { @class = "form-check-label" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Option B
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Benefits</h5>
+                            <p class="card-text">
+                                500 free minutes talk time
+                            </p>
+                            <p class="card-text">
+                                700 MB data
+                            </p>
+                            <p class="card-text">
+                                R 75
+                            </p>
+                            <div class="form-check">
+                                @Html.CheckBoxFor(m => m.packageB, new { @class = "form-check-input" })
+                                @Html.LabelFor(m => m.packageB, new { @class = "form-check-label" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Option C
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Benefits</h5>
+                            <p class="card-text">
+                                1000 free minutes talk time
+                            </p>
+                            <p class="card-text">
+                                1 GB data
+                            </p>
+                            <p class="card-text">
+                                R 100
+                            </p>
+                            <div class="form-check">
+                                @Html.CheckBoxFor(m => m.packageC, new { @class = "form-check-input" })
+                                @Html.LabelFor(m => m.packageC, new { @class = "form-check-label" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <br />
+                <br />
+                <br />
+                <button class="btn btn-primary btn-lg" role="button" type="submit" aria-disabled="true">Submit</button>
+            </div>
+        }
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@*This is my Thank You page where user will directed after choosing a plan*@
+<div class="jumbotron text-center">
+    <h3>Thank You For Choosing Our Package</h3>
+    @if (ViewBag.Choice == "A")
+    {
+        <p class="lead"><strong>Please check your email</strong> for further instructions on how you will recieve you package.</p>
+        <div class="card">
+            <div class="card-header">
+                Option A
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Benefits</h5>
+                <p class="card-text">
+                    500 free minutes talk time
+                </p>
+                <p class="card-text">
+                    700 MB data
+                </p>
+                <p class="card-text">
+                    R 75
+                </p>
+            </div>
+        </div>
+
+    }
+    @if (ViewBag.Choice == "B")
+    {
+        <p class="lead"><strong>Please check your email</strong> for further instructions on how you will recieve you package.</p>
+        <div class="card">
+            <div class="card-header">
+                Option B
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Benefits</h5>
+                <p class="card-text">
+                    500 free minutes talk time
+                </p>
+                <p class="card-text">
+                    700 MB data
+                </p>
+                <p class="card-text">
+                    R 75
+                </p>
+            </div>
+        </div>
+    }
+    @if (ViewBag.Choice == "C")
+    {
+        <p class="lead"><strong>Please check your email</strong> for further instructions on how you will recieve you package.</p>
+        <div class="card">
+            <div class="card-header">
+                Option C
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Benefits</h5>
+                <p class="card-text">
+                    1000 free minutes talk time
+                </p>
+                <p class="card-text">
+                    1 GB data
+                </p>
+                <p class="card-text">
+                    R 100
+                </p>
+            </div>
+        </div>
+    }
+    <hr>
+    <p class="lead">
+        <button class="btn btn-primary btn-lg" role="button" type="submit" aria-disabled="true">Go Back to Home</button>
+    </p>
+</div>
